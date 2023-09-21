@@ -16,17 +16,17 @@ module.exports = {
         apiToken: process.env.GATSBY_DATO_CMS_KEY,
       },
     },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        // con: "src/images/favicon.svg", // link do favicon
-        name: `Your Best Party`, // nazwa strony
-        short_name: `yourbestparty`, // skrócona nazwa strony
-        start_url: `/`, // czyli ścieżka którą powinien zobaczyć użytkownik po pierwszym włączeniu strony
-        background_color: `#EDAA52`, // kolor tła zastępczego, który bedzie wyświetlany na stronie aplikacji przed załadowaniem jej arkusza stylów
-        theme_color: `#34DA31`, // domyślny kolor motywu aplikacji
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-manifest",
+    //   options: {
+    //     // con: "src/images/favicon.svg", // link do favicon
+    //     name: `Your Best Party`, // nazwa strony
+    //     short_name: `yourbestparty`, // skrócona nazwa strony
+    //     start_url: `/`, // czyli ścieżka którą powinien zobaczyć użytkownik po pierwszym włączeniu strony
+    //     background_color: `#EDAA52`, // kolor tła zastępczego, który bedzie wyświetlany na stronie aplikacji przed załadowaniem jej arkusza stylów
+    //     theme_color: `#34DA31`, // domyślny kolor motywu aplikacji
+    //   },
+    // },
 
     {
       resolve: "gatsby-plugin-robots-txt",
