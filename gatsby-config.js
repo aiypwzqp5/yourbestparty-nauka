@@ -19,7 +19,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/favicon.svg", // link do favicon
+        // con: "src/images/favicon.svg", // link do favicon
         name: `Your Best Party`, // nazwa strony
         short_name: `yourbestparty`, // skrócona nazwa strony
         start_url: `/`, // czyli ścieżka którą powinien zobaczyć użytkownik po pierwszym włączeniu strony
