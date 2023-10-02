@@ -1,6 +1,7 @@
 import * as React from "react";
 import GlobalStyle from "../styles/GlobalStyles";
 import Input from "../components/atoms/Input/Input";
+import Button from "../components/atoms/Button/Button";
 
 const IndexPage = () => {
   return (
@@ -13,6 +14,7 @@ const IndexPage = () => {
         type="textarea"
         error="error text"
       />
+      <Button text="KONTAKT" />
     </main>
   );
 };
