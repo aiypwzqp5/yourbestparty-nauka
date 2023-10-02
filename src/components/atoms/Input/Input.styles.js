@@ -4,6 +4,13 @@ const inputStyle = css`
   border: 2px solid var(--black);
   width: 100%;
   border-radius: 21px;
+
+  &:focus-visible {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: var(--hoverGreen);
+    outline-offset: 3px;
+  }
 `;
 
 export const StyledInputWrapper = styled.div`
