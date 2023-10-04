@@ -2,23 +2,20 @@ import * as React from "react";
 import Input from "../components/atoms/Input/Input";
 import Button from "../components/atoms/Button/Button";
 import HamburgerButton from "../components/atoms/HamburgerButton/HamburgerButton";
-import GlobalLayout from "../components/templates/GlobalLayout/GlobalLayout";
 
 const IndexPage = () => {
   return (
-    <GlobalLayout>
-      <main>
-        <Input name="example" label="Example" type="text" error="error text" />
-        <Input
-          name="example"
-          label="Example"
-          type="textarea"
-          error="error text"
-        />
-        <Button text="KONTAKT" />
-        <HamburgerButton />
-      </main>
-    </GlobalLayout>
+    <main>
+      <Input name="example" label="Example" type="text" error="error text" />
+      <Input
+        name="example"
+        label="Example"
+        type="textarea"
+        error="error text"
+      />
+      <Button text="KONTAKT" />
+      <HamburgerButton />
+    </main>
   );
 };
 
