@@ -9,7 +9,7 @@ const HamburgerButton = ({ openMenu, isOpen }) => (
   <StyledHamburgerButton
     aria-label="otwórz menu"
     onClick={openMenu}
-    isopen={isOpen}
+    $isopen={isOpen}
   >
     <StyledHamburgerBox isopen={isOpen}>
       <StyledHamburgerInner isopen={isOpen} />

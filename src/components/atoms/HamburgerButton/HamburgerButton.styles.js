@@ -32,20 +32,20 @@ export const StyledHamburgerInner = styled.span`
   top: 50%;
   border-radius: 2px;
   transition: background-color 250ms linear;
-  background-color: ${({ isopen }) =>
-    isopen ? "transparent" : "var(--black)"};
+  background-color: ${({ $isopen }) =>
+    $isopen ? "transparent" : "var(--black)"};
 
   &::after {
     content: "";
     left: 0;
-    width: ${({ isopen }) => (isopen ? "36px" : "24px")};
+    width: ${({ $isopen }) => ($isopen ? "36px" : "24px")};
     height: 3px;
     position: absolute;
     background-color: var(--black);
     top: 8px;
     border-radius: 3px;
-    transform: ${({ isopen }) =>
-      isopen ? "rotate(-45deg) translate(7px, -6px)" : "rotate(0)"};
+    transform: ${({ $isopen }) =>
+      $isopen ? "rotate(-45deg) translate(7px, -6px)" : "rotate(0)"};
     transition: transform 250ms linear;
   }
 
@@ -58,8 +58,8 @@ export const StyledHamburgerInner = styled.span`
     background-color: var(--black);
     top: -8px;
     border-radius: 2px;
-    transform: ${({ isopen }) =>
-      isopen ? "rotate(45deg) translate(5px, 4px)" : "rotate(0)"};
+    transform: ${({ $isopen }) =>
+      $isopen ? "rotate(45deg) translate(5px, 4px)" : "rotate(0)"};
     transition: transform 250ms linear;
   }
 `;
