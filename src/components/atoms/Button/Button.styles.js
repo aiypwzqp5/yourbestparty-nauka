@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { focusVisibleStyles } from "../../../styles/sharedStyles";
 
 export const StyledButton = styled.button`
   background-color: var(--orange);
@@ -16,10 +17,5 @@ export const StyledButton = styled.button`
     color: var(--white);
   }
 
-  &:focus-visible {
-    outline-width: 1px;
-    outline-style: solid;
-    outline-color: var(--hoverGreen);
-    outline-offset: 3px;
-  }
+  ${focusVisibleStyles};
 `;

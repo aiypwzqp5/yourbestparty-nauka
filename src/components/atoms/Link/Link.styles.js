@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { focusVisibleStyles } from "../../../styles/sharedStyles";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -7,12 +8,7 @@ export const StyledLink = styled(Link)`
   font-size: 20px;
   transition: color 250ms linear;
 
-  &:focus-visible {
-    outline-width: 1px;
-    outline-style: solid;
-    outline-color: var(--hoverGreen);
-    outline-offset: 3px;
-  }
+  ${focusVisibleStyles};
 
   &:hover {
     color: var(--red);

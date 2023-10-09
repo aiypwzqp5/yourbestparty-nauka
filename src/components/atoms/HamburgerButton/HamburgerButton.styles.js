@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { focusVisibleStyles } from "../../../styles/sharedStyles";
 
 export const StyledHamburgerButton = styled.button`
   cursor: pointer;
@@ -9,12 +10,7 @@ export const StyledHamburgerButton = styled.button`
   display: flex;
   justify-content: flex-end;
 
-  &:focus-visible {
-    outline-width: 1px;
-    outline-style: solid;
-    outline-color: var(--hoverGreen);
-    outline-offset: 3px;
-  }
+  ${focusVisibleStyles};
 `;
 
 export const StyledHamburgerBox = styled.span`
