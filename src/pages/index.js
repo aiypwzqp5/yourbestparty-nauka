@@ -8,7 +8,7 @@ const IndexPage = ({ data: { datoCmsHomepage } }) => {
     <main>
       <HeroSection
         title={datoCmsHomepage.title}
-        desc={datoCmsHomepage.desc}
+        desc={datoCmsHomepage.description}
         heroImage={datoCmsHomepage.heroImage}
       />
     </main>
