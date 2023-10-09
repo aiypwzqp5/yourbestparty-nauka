@@ -10,6 +10,18 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-components",
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `dominantColor`,
+          quality: 90,
+        },
+      },
+    },
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -38,7 +50,6 @@ module.exports = {
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-
     // process.env.NODE_ENV === 'production'
     //   ? { userAgent: '*', allow: '/' }
     //   : { userAgent: '*', disallow: '/' },

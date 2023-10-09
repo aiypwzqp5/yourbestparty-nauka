@@ -1,24 +1,31 @@
 import * as React from "react";
-import Input from "../components/atoms/Input/Input";
-import Button from "../components/atoms/Button/Button";
-import HamburgerButton from "../components/atoms/HamburgerButton/HamburgerButton";
-import FAQElement from "../components/atoms/FAQElement/FAQElement";
+import { graphql } from "gatsby";
 
-const IndexPage = () => {
+import HeroSection from "../components/organisms/HeroSection/HeroSection";
+
+const IndexPage = ({ data: { datoCmsHomepage } }) => {
   return (
     <main>
-      <Input name="example" label="Example" type="text" error="error text" />
-      <Input
-        name="example"
-        label="Example"
-        type="textarea"
-        error="error text"
+      <HeroSection
+        title={datoCmsHomepage.title}
+        desc={datoCmsHomepage.desc}
+        heroImage={datoCmsHomepage.heroImage}
       />
-      <Button text="KONTAKT" />
-      <HamburgerButton />
-      <FAQElement question="Testowe pytanie" answer="testowa wiadomość" />
     </main>
   );
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query homePageQuery {
+    datoCmsHomepage {
+      description
+      title
+      heroImage {
+        alt
+        gatsbyImageData
+      }
+    }
+  }
+`;
