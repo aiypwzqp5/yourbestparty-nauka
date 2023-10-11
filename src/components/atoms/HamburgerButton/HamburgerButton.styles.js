@@ -11,6 +11,10 @@ export const StyledHamburgerButton = styled.button`
   justify-content: flex-end;
 
   ${focusVisibleStyles};
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 export const StyledHamburgerBox = styled.span`
@@ -29,7 +33,7 @@ export const StyledHamburgerInner = styled.span`
   border-radius: 2px;
   transition: background-color 250ms linear;
   background-color: ${({ $isopen }) =>
-    $isopen ? "transparent" : "var(--black)"};
+    $isopen ? "transparent" : "var(--white)"};
 
   &::after {
     content: "";
@@ -37,7 +41,8 @@ export const StyledHamburgerInner = styled.span`
     width: ${({ $isopen }) => ($isopen ? "36px" : "24px")};
     height: 3px;
     position: absolute;
-    background-color: var(--black);
+    background-color: ${({ $isopen }) =>
+      $isopen ? "var(--black)" : "var(--white)"};
     top: 8px;
     border-radius: 3px;
     transform: ${({ $isopen }) =>
@@ -51,7 +56,8 @@ export const StyledHamburgerInner = styled.span`
     width: 36px;
     height: 3px;
     position: absolute;
-    background-color: var(--black);
+    background-color: ${({ $isopen }) =>
+      $isopen ? "var(--black)" : "var(--white)"};
     top: -8px;
     border-radius: 2px;
     transform: ${({ $isopen }) =>
