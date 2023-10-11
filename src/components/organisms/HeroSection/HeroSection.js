@@ -5,6 +5,8 @@ import {
   StyledHeroSection,
   StyledImageWrapper,
   StyledContentWrapper,
+  StyledTitle,
+  StyledDesc,
 } from "./HeroSection.styles";
 
 const HeroSection = ({ heroImage, title, desc }) => {
@@ -17,8 +19,8 @@ const HeroSection = ({ heroImage, title, desc }) => {
         />
       </StyledImageWrapper>
       <StyledContentWrapper>
-        <h1>{title}</h1>
-        <p>{desc}</p>
+        <StyledTitle>{title}</StyledTitle>
+        <StyledDesc>{desc}</StyledDesc>
       </StyledContentWrapper>
     </StyledHeroSection>
   );
