@@ -14,13 +14,13 @@ const IndexPage = ({ data: { datoCmsHomepage } }) => (
     />
     <YourBestPartySection
       image={datoCmsHomepage.zdjecie}
-      title={datoCmsHomepage.tytulSekcjiDrugiej}
+      title={datoCmsHomepage.tytulSekcji}
       desc={datoCmsHomepage.opisSekcji}
       btnText={datoCmsHomepage.tekstWPrzycisku}
     />
     <ListSection
       image={datoCmsHomepage.zdjecieSekcji}
-      title={datoCmsHomepage.tytulSekcji}
+      title={datoCmsHomepage.tytulSekcjiDrugiej}
       list={datoCmsHomepage.listaPodTytulem}
     />
   </main>

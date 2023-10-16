@@ -13,14 +13,14 @@ import { StyledSectionTitle } from "../../../styles/sharedStyles";
 
 const YourBestPartySection = ({ image, title, desc, btnText }) => (
   <StyledYourBestPartySection>
-    <StyledImageWrapper>
-      <GatsbyImage image={getImage(image.gatsbyImageData)} alt={image.alt} />
-    </StyledImageWrapper>
     <StyledTextWrapper>
-      <StyledSectionTitle>{title}</StyledSectionTitle>
+      <StyledSectionTitle $mobileTextAlign="center">{title}</StyledSectionTitle>
       <StyledDesc>{desc}</StyledDesc>
       <Button type="button" text={btnText} />
     </StyledTextWrapper>
+    <StyledImageWrapper>
+      <GatsbyImage image={getImage(image.gatsbyImageData)} alt={image.alt} />
+    </StyledImageWrapper>
   </StyledYourBestPartySection>
 );
 

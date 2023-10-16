@@ -9,7 +9,10 @@ export const focusVisibleStyles = css`
   }
 `;
 
-export const StyledSectionTitle = styled.h2``;
+export const StyledSectionTitle = styled.h2`
+  font-size: clamp(32px, 2.5vw, 48px);
+  text-align: ${({ $mobileTextAlign }) => $mobileTextAlign ?? "left"};
+`;
 
 export const StyledGlobalWrapper = styled.div`
   width: 100%;
