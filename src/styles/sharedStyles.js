@@ -10,3 +10,9 @@ export const focusVisibleStyles = css`
 `;
 
 export const StyledSectionTitle = styled.h2``;
+
+export const StyledGlobalWrapper = styled.div`
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+`;
