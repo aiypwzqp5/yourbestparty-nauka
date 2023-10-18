@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const StyledRealizationCard = styled.div`
-  width: 100%;
-  max-width: 422px;
+  width: 98%;
   height: 266px;
   position: relative;
   display: flex;
@@ -13,6 +12,13 @@ export const StyledImageWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const StyledTitleWrapper = styled.div`
