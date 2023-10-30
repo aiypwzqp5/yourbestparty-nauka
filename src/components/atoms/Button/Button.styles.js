@@ -1,7 +1,8 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { focusVisibleStyles } from "../../../styles/sharedStyles";
+import { Link } from "gatsby";
 
-export const StyledButton = styled.button`
+const basicStyles = css`
   background-color: var(--orange);
   color: var(--white);
   padding: 12px 0;
@@ -22,6 +23,14 @@ export const StyledButton = styled.button`
     padding: 22px 62px;
     max-width: 216px;
   }
+`;
+
+export const StyledButton = styled.button`
+  ${basicStyles};
 
   ${focusVisibleStyles};
+`;
+
+export const StyledLink = styled(Link)`
+  ${basicStyles}
 `;
