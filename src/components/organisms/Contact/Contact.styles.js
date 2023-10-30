@@ -1,3 +1,5 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const StyledContact = styled.section``
+export const StyledContact = styled.section`
+  width: 45%;
+`;
