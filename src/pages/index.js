@@ -5,6 +5,7 @@ import HeroSection from "../components/organisms/HeroSection/HeroSection";
 import YourBestPartySection from "../components/molecules/YourBestPartySection/YourBestPartySection";
 import ListSection from "../components/molecules/ListSection/ListSection";
 import OurRealizations from "../components/organisms/OurRealizations/OurRealizations";
+import FAQContactSection from "../components/organisms/FAQContactSection/FAQContactSection";
 
 const IndexPage = ({ data: { datoCmsHomepage } }) => (
   <main>
@@ -25,6 +26,7 @@ const IndexPage = ({ data: { datoCmsHomepage } }) => (
       list={datoCmsHomepage.listaPodTytulem}
     />
     <OurRealizations />
+    <FAQContactSection />
   </main>
 );
 
