@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
