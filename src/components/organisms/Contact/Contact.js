@@ -10,6 +10,9 @@ import Button from "../../atoms/Button/Button";
 import { StyledSectionTitle } from "../../../styles/sharedStyles";
 
 const Contact = () => {
+  const [isSend, setIsSend] = useState(false);
+  const [isError, setIsError] = useState(false);
+
   const { datoCmsSekcjaKontakt } = useStaticQuery(graphql`
     query ContactQuery {
       datoCmsSekcjaKontakt {
@@ -22,6 +25,14 @@ const Contact = () => {
     }
   `);
 
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   const {
     register,
     handleSubmit,
@@ -30,7 +41,20 @@ const Contact = () => {
     resolver: yupResolver(formValidaiton),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (values) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values }),
+    })
+      .then(() => {
+        setIsSend(true);
+      })
+      .catch(() => {
+        setIsError(true);
+      })
+      .finally(() => console.log("finally: "));
+  };
 
   const fields = [
     {
@@ -56,8 +80,8 @@ const Contact = () => {
       <StyledForm
         onSubmit={handleSubmit(onSubmit)}
         method="POST"
+        name="contact"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
       >
         {fields.map(({ name, type, label }) => (
           <Input
