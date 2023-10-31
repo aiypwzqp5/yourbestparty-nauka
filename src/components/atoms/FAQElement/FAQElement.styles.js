@@ -20,6 +20,7 @@ export const StyledQuestionWrapper = styled.summary`
   gap: 10px;
   font-weight: 700;
   font-size: clamp(20px, 2.222vw, 32px);
+  color: var(--white);
 
   &::-webkit-details-marker {
     display: none;
@@ -29,6 +30,8 @@ export const StyledQuestionWrapper = styled.summary`
 export const StyledAnswerWrapper = styled.div`
   margin-top: 14px;
   font-size: clamp(16px, 1.389vw, 20px);
+  color: var(--white);
+  margin-left: 34px;
 `;
 
 export const StyledIconWrapper = styled.div`

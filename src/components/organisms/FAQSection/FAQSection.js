@@ -22,7 +22,9 @@ const FAQSection = () => {
 
   return (
     <StyledFAQSection>
-      <StyledSectionTitle>{datoCmsSekcjaFaq.tytu}</StyledSectionTitle>
+      <StyledSectionTitle style={{ color: "#fff" }}>
+        {datoCmsSekcjaFaq.tytu}
+      </StyledSectionTitle>
       <StyledElements>
         {datoCmsSekcjaFaq.pytaniaIOdpowiedzi.map(
           ({ pytanie, odpowied, id }) => (

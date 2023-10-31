@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { StyledContact } from "./Contact.styles";
+import { StyledContact, StyledForm } from "./Contact.styles";
 import Input from "../../atoms/Input/Input";
 
 import { formValidaiton } from "./Contact.data";
@@ -53,18 +53,24 @@ const Contact = () => {
   return (
     <StyledContact>
       <StyledSectionTitle>{datoCmsSekcjaKontakt.tytu}</StyledSectionTitle>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm
+        onSubmit={handleSubmit(onSubmit)}
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
         {fields.map(({ name, type, label }) => (
           <Input
             key={name}
             name={name}
             type={type}
-            error={errors?.["name"]?.message}
+            error={errors?.[name]?.message}
             label={label}
+            register={register(name)}
           />
         ))}
         <Button type="submit" text={datoCmsSekcjaKontakt.tekstWPrzycisku} />
-      </form>
+      </StyledForm>
     </StyledContact>
   );
 };
