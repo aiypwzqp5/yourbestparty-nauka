@@ -46,7 +46,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://yourbestparty.com/", // link do strony jeżeli taki kiedyś by istniał
-        sitemap: "https://yourbestparty.com/sitemap.xml", // link do sitemapy - stworzymy ją za chwilę
+        sitemap: "https://yourbestparty.com/sitemap-index.xml", // link do sitemapy - stworzymy ją za chwilę
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -55,6 +55,9 @@ module.exports = {
     //   : { userAgent: '*', disallow: '/' },
 
     // powiedziec żę to tylko przykładowa i wrócimy do tego w jednej z poprzednich lekcji.
+
+    // link: /sitemap-index.xml
+    // link: sitemap-0.xml
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
