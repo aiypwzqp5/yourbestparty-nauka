@@ -4,15 +4,19 @@ import { StyledNav } from "./Nav.styles";
 import Link from "../../atoms/Link/Link";
 import { NavLabels } from "./Nav.data";
 
-const Nav = ({ isOpen }) => {
-  const isColorWhite = isOpen ? "color--black" : null;
+const Nav = ({ isOpen, isBlack }) => {
+  const isMobileColorWhite = isBlack
+    ? "color--always-black"
+    : isOpen
+    ? "color--black"
+    : null;
 
   return (
     <StyledNav $isOpen={isOpen}>
-      <Link url="kontakt" className={isColorWhite}>
+      <Link url="/kontakt" className={isMobileColorWhite}>
         {NavLabels.CONTACT}
       </Link>
-      <Link url="realizacje" className={isColorWhite}>
+      <Link url="/nasze-realizacje" className={isMobileColorWhite}>
         {NavLabels.REALIZATIONS}
       </Link>
     </StyledNav>

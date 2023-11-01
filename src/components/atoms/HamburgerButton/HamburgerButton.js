@@ -5,14 +5,14 @@ import {
   StyledHamburgerInner,
 } from "./HamburgerButton.styles";
 
-const HamburgerButton = ({ openMenu, isOpen }) => (
+const HamburgerButton = ({ openMenu, isOpen, isBlack }) => (
   <StyledHamburgerButton
     aria-label="otwórz menu"
     onClick={openMenu}
     $isopen={isOpen}
   >
     <StyledHamburgerBox>
-      <StyledHamburgerInner $isopen={isOpen} />
+      <StyledHamburgerInner $isopen={isOpen} $isBlack={isBlack} />
     </StyledHamburgerBox>
   </StyledHamburgerButton>
 );

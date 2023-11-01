@@ -9,14 +9,14 @@ import {
 } from "./FAQContactSection.styles.js";
 import DoubleCircle from "../../atoms/Icons/DoubleCircle";
 
-const FAQContactSection = () => {
+const FAQContactSection = ({ isContactPage }) => {
   return (
-    <StyledFAQContactSection>
+    <StyledFAQContactSection $isContactPage={!isContactPage}>
       <StyledCircleWrapper>
         <DoubleCircle />
       </StyledCircleWrapper>
-      <Contact />
-      <FAQSection />
+      <Contact isContactPage={isContactPage} />
+      <FAQSection isContactPage={isContactPage} />
     </StyledFAQContactSection>
   );
 };

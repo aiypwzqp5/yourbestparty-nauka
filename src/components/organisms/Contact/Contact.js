@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { StyledContact, StyledForm } from "./Contact.styles";
+import {
+  StyledContact,
+  StyledForm,
+  StyledGlobalError,
+  StyledSuccessMessage,
+} from "./Contact.styles";
 import Input from "../../atoms/Input/Input";
 
-import { formValidaiton } from "./Contact.data";
+import { formValidaiton, labels } from "./Contact.data";
 import Button from "../../atoms/Button/Button";
 import { StyledSectionTitle } from "../../../styles/sharedStyles";
 
-const Contact = () => {
+const Contact = ({ isContactPage }) => {
   const [isSend, setIsSend] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -48,12 +53,12 @@ const Contact = () => {
       body: encode({ "form-name": "contact", ...values }),
     })
       .then(() => {
+        setIsError(false);
         setIsSend(true);
       })
       .catch(() => {
         setIsError(true);
-      })
-      .finally(() => console.log("finally: "));
+      });
   };
 
   const fields = [
@@ -75,7 +80,7 @@ const Contact = () => {
   ];
 
   return (
-    <StyledContact>
+    <StyledContact $isContactPage={isContactPage}>
       <StyledSectionTitle>{datoCmsSekcjaKontakt.tytu}</StyledSectionTitle>
       <StyledForm
         onSubmit={handleSubmit(onSubmit)}
@@ -94,6 +99,12 @@ const Contact = () => {
           />
         ))}
         <Button type="submit" text={datoCmsSekcjaKontakt.tekstWPrzycisku} />
+        {isError ? (
+          <StyledGlobalError>{labels.globalError}</StyledGlobalError>
+        ) : null}
+        {isSend ? (
+          <StyledSuccessMessage>{labels.successMsg}</StyledSuccessMessage>
+        ) : null}
       </StyledForm>
     </StyledContact>
   );

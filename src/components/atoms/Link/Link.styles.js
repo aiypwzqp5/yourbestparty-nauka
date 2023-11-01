@@ -10,15 +10,19 @@ export const StyledLink = styled(Link)`
 
   ${focusVisibleStyles};
 
-  &:hover {
-    color: var(--red);
-  }
-
   &.color--black {
     color: var(--black);
 
     @media only screen and (min-width: 768px) {
       color: var(--white);
     }
+  }
+
+  &.color--always-black {
+    color: var(--black);
+  }
+
+  &:hover {
+    color: var(--red);
   }
 `;

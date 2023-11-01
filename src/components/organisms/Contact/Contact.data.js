@@ -8,3 +8,8 @@ export const formValidaiton = yup.object({
     .min(3, "Wiadomość jest za krótka")
     .required("To pole jest wymagane"),
 });
+
+export const labels = {
+  globalError: "Wystąpił błąd",
+  successMsg: "Poprawnie wysłano wiadomość",
+};

@@ -32,5 +32,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledLink = styled(Link)`
+  text-decoration: none;
+  text-align: center;
   ${basicStyles}
 `;

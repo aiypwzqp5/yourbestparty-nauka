@@ -32,8 +32,8 @@ export const StyledHamburgerInner = styled.span`
   top: 50%;
   border-radius: 2px;
   transition: background-color 250ms linear;
-  background-color: ${({ $isopen }) =>
-    $isopen ? "transparent" : "var(--white)"};
+  background-color: ${({ $isopen, $isBlack }) =>
+    $isBlack ? "var(--black)" : $isopen ? "transparent" : "var(--white)"};
 
   &::after {
     content: "";
@@ -41,8 +41,8 @@ export const StyledHamburgerInner = styled.span`
     width: ${({ $isopen }) => ($isopen ? "36px" : "24px")};
     height: 3px;
     position: absolute;
-    background-color: ${({ $isopen }) =>
-      $isopen ? "var(--black)" : "var(--white)"};
+    background-color: ${({ $isopen, $isBlack }) =>
+      $isBlack ? "var(--black)" : $isopen ? "transparent" : "var(--white)"};
     top: 8px;
     border-radius: 3px;
     transform: ${({ $isopen }) =>
@@ -56,8 +56,8 @@ export const StyledHamburgerInner = styled.span`
     width: 36px;
     height: 3px;
     position: absolute;
-    background-color: ${({ $isopen }) =>
-      $isopen ? "var(--black)" : "var(--white)"};
+    background-color: ${({ $isopen, $isBlack }) =>
+      $isBlack ? "var(--black)" : $isopen ? "transparent" : "var(--white)"};
     top: -8px;
     border-radius: 2px;
     transform: ${({ $isopen }) =>

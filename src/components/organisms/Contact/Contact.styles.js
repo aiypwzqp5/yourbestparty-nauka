@@ -15,6 +15,9 @@ export const StyledContact = styled.section`
   @media only screen and (min-width: 954px) {
     width: 50%;
     align-items: flex-end;
+
+    padding-top: ${({ $isContactPage }) =>
+      $isContactPage ? "148px" : "clamp(34px, 4.444vw, 64px)"};
   }
 
   @media only screen and (min-width: 1440px) {
@@ -30,4 +33,18 @@ export const StyledForm = styled.form`
   align-items: center;
   flex-direction: column;
   gap: 22px;
+`;
+
+export const StyledGlobalError = styled.p`
+  color: var(--red);
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+`;
+
+export const StyledSuccessMessage = styled.p`
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  color: var(--green);
 `;

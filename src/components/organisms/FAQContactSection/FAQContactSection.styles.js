@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const StyledFAQContactSection = styled.section`
   width: 100%;
   display: flex;
-  margin-top: clamp(54px, 10.278vw, 148px);
+  margin-top: ${({ $isContactPage }) =>
+    $isContactPage ? "clamp(54px, 10.278vw, 148px)" : null};
   position: relative;
   z-index: 1;
   flex-direction: column-reverse;

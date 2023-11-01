@@ -1,8 +1,13 @@
-import React from 'react'
-import { graphql, useStaticQuery } from "gatsby"
-import { StyledBottomWrapper, StyledFooter, StyledHeading, StyledLinks } from './Footer.styles'
-import Link from '../../atoms/Link/Link'
-import { labels } from './Footer.data'
+import React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import {
+  StyledBottomWrapper,
+  StyledFooter,
+  StyledHeading,
+  StyledLinks,
+} from "./Footer.styles";
+import Link from "../../atoms/Link/Link";
+import { labels } from "./Footer.data";
 
 const Footer = () => {
   const { datoCmsStopka } = useStaticQuery(graphql`
@@ -11,26 +16,23 @@ const Footer = () => {
         info
       }
     }
-  `)
+  `);
 
   return (
     <StyledFooter>
-      <StyledHeading>
-        {labels.logo}
-      </StyledHeading>
+      <StyledHeading>{labels.logo}</StyledHeading>
       <StyledLinks>
-        <Link url="/contact">
-          {labels.kontakt}
-        </Link>
-        <Link url="/realizacje">
-          {labels.realizacje}
-        </Link>
+        <Link url="/kontakt">{labels.kontakt}</Link>
+        <Link url="/nasze-realizacje">{labels.realizacje}</Link>
       </StyledLinks>
       <StyledBottomWrapper>
-        <p>{datoCmsStopka.info}{new Date().getFullYear()}</p>
+        <p>
+          {datoCmsStopka.info}
+          {new Date().getFullYear()}
+        </p>
       </StyledBottomWrapper>
     </StyledFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

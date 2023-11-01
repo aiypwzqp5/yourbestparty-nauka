@@ -16,7 +16,7 @@ const YourBestPartySection = ({ image, title, desc, btnText }) => (
     <StyledTextWrapper>
       <StyledSectionTitle $mobileTextAlign="center">{title}</StyledSectionTitle>
       <StyledDesc>{desc}</StyledDesc>
-      <Button type="button" text={btnText} />
+      <Button type="button" text={btnText} href="/kontakt" />
     </StyledTextWrapper>
     <StyledImageWrapper>
       <GatsbyImage image={getImage(image.gatsbyImageData)} alt={image.alt} />
