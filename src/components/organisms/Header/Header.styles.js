@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 export const StyledHeader = styled.header`
   position: absolute;
@@ -14,4 +15,4 @@ export const StyledHeader = styled.header`
   max-width: 1920px;
 `;
 
-export const StyledLogo = styled.div``;
+export const StyledLogo = styled(Link)``;

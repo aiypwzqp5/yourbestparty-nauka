@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Slider from "react-slick";
 
 import RealizationCard from "../../atoms/RealizationCard/RealizationCard";
@@ -21,6 +21,7 @@ const OurRealizations = () => {
       allDatoCmsRealizacja {
         edges {
           node {
+            slug
             zdjecieDoMiniaturki {
               alt
               gatsbyImageData
@@ -59,11 +60,13 @@ const OurRealizations = () => {
       <StyledSliderWrapper>
         <Slider {...settings}>
           {data.allDatoCmsRealizacja.edges.map(({ node }) => (
-            <RealizationCard
-              key={node.title}
-              image={node.zdjecieDoMiniaturki}
-              title={node.title}
-            />
+            <Link to={`/realizacja/${node.slug}`}>
+              <RealizationCard
+                key={node.title}
+                image={node.zdjecieDoMiniaturki}
+                title={node.title}
+              />
+            </Link>
           ))}
         </Slider>
       </StyledSliderWrapper>

@@ -13,6 +13,10 @@ export const StyledSliderWrapper = styled.div`
   width: 100%;
   margin-top: 31px;
 
+  a {
+    text-decoration: none;
+  }
+
   .slick-dots {
     transform: translateY(20px);
 

@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <StyledLogo>
+      <StyledLogo to="/">
         <Logo
           isBlack={location.pathname === "/kontakt/" || isOurRealizationsPage}
         />
