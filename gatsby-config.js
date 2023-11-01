@@ -55,53 +55,45 @@ module.exports = {
     //   : { userAgent: '*', disallow: '/' },
 
     // powiedziec żę to tylko przykładowa i wrócimy do tego w jednej z poprzednich lekcji.
-    // {
-    //   resolve: "gatsby-plugin-sitemap",
-    //   options: {
-    //     query: `
-    //     {
-    //       allSitePage {
-    //         nodes {
-    //           path
-    //         }
-    //       }
-    //       allWpContentNode(filter: {nodeType: {in: ["Post", "Page"]}}) {
-    //         nodes {
-    //           ... on WpPost {
-    //             uri
-    //             modifiedGmt
-    //           }
-    //           ... on WpPage {
-    //             uri
-    //             modifiedGmt
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `,
-    //     resolveSiteUrl: () => siteUrl,
-    //     resolvePages: ({
-    //       allSitePage: { nodes: allPages },
-    //       allWpContentNode: { nodes: allWpNodes },
-    //     }) => {
-    //       const wpNodeMap = allWpNodes.reduce((acc, node) => {
-    //         const { uri } = node;
-    //         acc[uri] = node;
-
-    //         return acc;
-    //       }, {});
-
-    //       return allPages.map((page) => {
-    //         return { ...page, ...wpNodeMap[page.path] };
-    //       });
-    //     },
-    //     serialize: ({ path, modifiedGmt }) => {
-    //       return {
-    //         url: path,
-    //         lastmod: modifiedGmt,
-    //       };
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        output: "/./",
+        resolveSiteUrl: ({
+          site: {
+            siteMetadata: { siteUrl },
+          },
+        }) => siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes },
+          site: {
+            siteMetadata: { siteUrl },
+          },
+        }) =>
+          nodes.map(({ path }) => ({
+            url: `${siteUrl}${path}`,
+            path,
+            changefreq: "daily",
+            priority: 0.7,
+          })),
+        serialize: ({ path }) => ({
+          url: path,
+        }),
+      },
+    },
   ],
 };
